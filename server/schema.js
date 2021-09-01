@@ -1,4 +1,4 @@
-const {buildSchema} = require('graphql')
+const { buildSchema } = require('graphql');
 
 const schema = buildSchema(`
     
@@ -34,6 +34,6 @@ const schema = buildSchema(`
         createUser(input: UserInput): User
     }
 
-`)
+`);
 
-module.exports = schema
+module.exports = schema;

@@ -2,7 +2,7 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const cors = require('cors');
 const schema = require('./schema');
-const users = [{ id: 1, username: 'Vasya', age: 25 }]; // mockup data
+const users = [{ id: 1, username: 'Vasya', age: 25 }]; // mockup data db
 
 const app = express();
 app.use(cors());
@@ -31,10 +31,10 @@ const root = {
 app.use(
   '/graphql',
   graphqlHTTP({
-    graphiql: true,
+    graphiql: true, // graphical interface enabled http://localhost:5000/graphql
     schema,
     rootValue: root,
   })
 );
 
-app.listen(5000, () => console.log('server started on port 5000'));
+app.listen(5000, () => console.log('Server started on port 5000'));
